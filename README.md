@@ -15,5 +15,5 @@ Or pinning some vertices:
 
 ![pinned](images/coral_node_draped.png)
 
-See [Look, Think, Make]() for more details.
+See [Look, Think, Make](http://elfnor.com/blender-adventures-with-hyperbolic-planes.html) for more details.
 
