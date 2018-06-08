@@ -13,7 +13,7 @@ def setup():
     PeasyCam(this, halfWidth, halfHeight, 0.0, 500)
     
     #hyperbolic tiling
-    p, q, layers = 6, 4, 4 
+    p, q, layers = 6, 4, 3 
     verts_out, edges_out, faces_out = ht.poincare_tiling(p, q, layers) 
     global v2, e2, f2
     v2, e2, f2 = ht.cone_tris(p, verts_out, edges_out, faces_out)
@@ -24,11 +24,11 @@ def setup():
     # system parameters
     mass = 1.1 # mass of particles
     restlength = 1.0  # Rest length of springs between nodes
-    strength = 0.99  # Strength of springs between nodes
+    strength = 0.4  # Strength of springs between nodes
     damping = 0.0   # Damping of springs between nodes
     drag = 0.5  # Physics System drag (friction) 
-    repulsion = -0.007  # Repulsion force between nodes
-    repulsion_mindist = 0.1  # Distance from node where repulsion force begins to decrease
+    repulsion = -0.0015  # Repulsion force between nodes
+    repulsion_mindist = 0.05  # Distance from node where repulsion force begins to decrease
     
     global physics
     physics = ParticleSystem( 0, drag )
@@ -39,7 +39,8 @@ def setup():
     for e in e2:
         p1 = physics.getParticle(e[0])
         p2 = physics.getParticle(e[1])
-        stg = strength
+        r = ht.distance((p2.position().x(), p2.position().y(), p2.position().z()), (0.0, 0.0, 0.0))
+        stg = strength/r
         physics.makeSpring(p1, p2, stg, damping, restlength) 
     # repulsion between all nodes 
     N = physics.numberOfParticles()

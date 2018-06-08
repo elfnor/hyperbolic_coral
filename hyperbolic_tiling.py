@@ -9,7 +9,7 @@ ndigits = 5
 
 def distance(p1, p0):
     """euclidean distance """
-    d =  ((p1[0] - p0[0])**2 + (p1[1] - p0[1])**2)**0.5
+    d =  ((p1[0] - p0[0])**2 + (p1[1] - p0[1])**2 + (p1[2] - p0[2])**2)**0.5
     return d
     
 def circle_invert(p1, p0, r):
