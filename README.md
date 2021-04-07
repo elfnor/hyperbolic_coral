@@ -3,7 +3,7 @@ Hyperbolic Coral
 Updated to Sverchok vstable7 and Blender 2.91 2021-04-07
 
 `snl_hyperbolic_tiling.py` is the updated code for a Sverchok Scripted Node Lite.
-See `hyperbolic_tiling_2.91.blend for example of use. 
+See `hyperbolic_tiling_2.91.blend` for example of use. 
 
 This is  a [Sverchok](http://nikitron.cc.ua/sverchok_en.html) scripted node for use within [Blender](http://www.blender.org).
 
